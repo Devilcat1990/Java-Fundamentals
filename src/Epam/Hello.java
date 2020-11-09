@@ -23,6 +23,10 @@ public class Hello {
         System.out.println(" ");
         return choice;
     }
+    public static void otvet(int choise)
+    {
+        System.out.println("Вывод решения задачи №"+choise);
+    }
 
     public static void main(String[] args) {
         boolean exit = true;

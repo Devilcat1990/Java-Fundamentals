@@ -20,22 +20,27 @@ public class MenuMainTask {
             switch (choice) {
                 case 1:
                     cls.cls();
+                    cls.otvet(choice);
                     task1();
                     break;
                 case 2:
                     cls.cls();
+                    cls.otvet(choice);
                     task2(argument);
                     break;
                 case 3:
                     cls.cls();
+                    cls.otvet(choice);
                     task3();
                     break;
                 case 4:
                     cls.cls();
+                    cls.otvet(choice);
                     task4(argument);
                     break;
                 case 5:
                     cls.cls();
+                    cls.otvet(choice);
                     task5();
                     break;
                 case 6:
@@ -43,6 +48,7 @@ public class MenuMainTask {
                     exit = false;
                     break;
                 default:
+                    cls.cls();
                     System.out.println("Вы выбрали не существующий пункт меню!!");
             }
         } while (exit);

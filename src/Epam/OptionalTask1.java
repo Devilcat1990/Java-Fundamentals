@@ -1,5 +1,6 @@
 package Epam;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class OptionalTask1 {
@@ -23,29 +24,37 @@ public class OptionalTask1 {
             switch (choice) {
                 case 1:
                     cls.cls();
+                    cls.otvet(choice);
                     task1(value);
                     break;
                 case 2:
                     cls.cls();
+                    cls.otvet(choice);
                     task2(value);
                     break;
                 case 3:
                     cls.cls();
+                    cls.otvet(choice);
                     task3(value);
                     break;
                 case 4:
                     cls.cls();
+                    cls.otvet(choice);
                     task4(value);
                     break;
                 case 5:
                     cls.cls();
+                    cls.otvet(choice);
                     task5(value);
                     break;
                 case 6:
                     cls.cls();
+                    cls.otvet(choice);
+                    task6(value);
                     break;
                 case 7:
                     cls.cls();
+                    cls.otvet(choice);
                     task7(value);
                     break;
                 case 8:
@@ -53,6 +62,7 @@ public class OptionalTask1 {
                     exit = false;
                     break;
                 default:
+                    cls.cls();
                     System.out.println("Вы выбрали не существующий пункт меню!!");
             }
         } while (exit);
@@ -197,9 +207,33 @@ public class OptionalTask1 {
         System.out.println("Количество чисел содержащее только четные цифры: "+evenAmount);
         System.out.println("Количество чисел содержащее равное количество четных и нечетных цифр: "+oddEvenAmount);
     }
-    private void task6()
+    private void task6(int[] values)
     {
-
+        listValues(values);
+        boolean trueCheck=true;
+        for(int i=0; i< values.length; i++)
+        {
+            int[] a = Arrays.copyOf(Divider(values[i]), getSize(values[i]));
+            for (int b=0; b<a.length-1; b++)
+            {
+                if (a[b]<a[b+1])
+                {
+                    trueCheck=true;
+                }else
+                {
+                    trueCheck=false;
+                    b=a.length;
+                }
+            }
+            if (trueCheck==true)
+            {
+                System.out.println("\nЧисло в котором все цифры идут по возростанию: "+values[i]);
+                i=values.length;
+            }
+        }
+        if (trueCheck==false) {
+            System.out.println("\nЧисел в котором все цифры идут по возростанию НЕТ ");
+        }
     }
     private void task7(int[] values)
     {
@@ -308,8 +342,8 @@ public class OptionalTask1 {
             }
         }
         return even;
-    } //МЕТОД ПРОВЕРКИ ЦИФР ЧИСЛА НА ЧЕТНОСТЬ
-    public int evenAmountNumbers(int[] value)
+    } //МЕТОД ПРОВЕРКИ ВСЕХ ЦИФР НА ЧЕТНОСТЬ И ВОЗВРАЩЕНИЯ ИСТИНЫ ЕСЛИ КАЖДАЯ ЦИФРА ЧЕТНАЯ ВОЗВРАЩАЕТ true
+    public int evenAmountNumbers(int[] value)//МЕТО
     {
         int even=0;
         for (int i=0; i< value.length; i++)
