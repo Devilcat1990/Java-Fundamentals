@@ -189,7 +189,8 @@ public class OptionalTask1 {
             {
                 evenAmount++;
             }
-            if((getSize(values[i])%evenAmountNumbers(Divider(values[i])))==0){
+            if((getSize(values[i])-evenAmountNumbers(Divider(values[i])))==evenAmountNumbers(Divider(values[i])))
+            {
                 oddEvenAmount++;
             }
         }
@@ -241,6 +242,7 @@ public class OptionalTask1 {
         {
             System.out.print(values[i]+" ");
         }
+        System.out.println(" ");
     }
     public int getSize(int value)  //МЕТОД ВЫЧИСЛЕНИЯ ДЛИННЫ ЧИСЛА
     {
