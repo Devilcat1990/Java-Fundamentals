@@ -14,7 +14,7 @@ public class MenuMainTask {
             System.out.println("3: Вывести заданное количество случайных чисел с переходом и без перехода на новую строку.");
             System.out.println("4: Ввести целые числа как аргументы командной строки, подсчитать их сумму (произведение) и вывести результат на консоль.");
             System.out.println("5: Ввести число от 1 до 12. Вывести на консоль название месяца, соответствующего данному числу. Осуществить проверку корректности ввода чисел.");
-            System.out.println("6: Вернуться в Основное меню.");
+            System.out.println("6: Вернуться в Основное меню.\n");
             System.out.print("Пожалуйста сделайте выбор: ");
             int choice = in.nextInt();
             switch (choice) {
@@ -78,7 +78,7 @@ public class MenuMainTask {
         System.out.println(" ");
         int[] quantityArray = new int[quantity];
         for (int i = 0; i < quantityArray.length; i++) {
-            quantityArray[i] += ((int) (Math.random() * 100));
+            quantityArray[i] = ((int) (Math.random() * 100));
             System.out.print(quantityArray[i] + " ");
         }
         System.out.println("\n");

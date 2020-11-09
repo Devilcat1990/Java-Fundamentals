@@ -16,8 +16,7 @@ public class Hello {
         System.out.println("\nОСНОВНОЕ МЕНЮ\n");
         System.out.println("1: Перейти к заданиям из MAIN TASK");
         System.out.println("2: Перейти к заданиям из OPTIONAL TASK 1");
-        System.out.println("3: Перейти к заданиям из OPTIONAL TASK 2");
-        System.out.println("4: Выход.");
+        System.out.println("3: Выход.");
         System.out.print("Пожалуйста сделайте выбор: ");
         int choice = in.nextInt();
         System.out.println(" ");
@@ -41,9 +40,6 @@ public class Hello {
                     cls();
                     OptionalTask1 optTask1 = new OptionalTask1();
                     optTask1.menu(args);
-                    break;
-                case 3:
-                    cls();
                     break;
                 case 4:
                     cls();
