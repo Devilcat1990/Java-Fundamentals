@@ -63,7 +63,13 @@ public class MenuMainTask {
 
     private void task2(String[] argument) {
         if (argument.length == 0) {
-            System.out.println("\nВы не ввели аргументы командной строки, перезапустити программу с аргументами!");
+            System.out.println("\nВы не ввели аргументы командной строки, Пожалуйста введите:");
+            Scanner in = new Scanner(System.in);
+            String[] strArray = in.nextLine().split("\\W+");
+            ;
+            for (int i = strArray.length - 1; i >= 0; i--) {
+                System.out.print(strArray[i] + " ");
+            }
         } else {
             for (int i = argument.length - 1; i >= 0; i--) {
                 System.out.print(argument[i] + " ");
@@ -92,7 +98,14 @@ public class MenuMainTask {
         int summa = 0;
         int summa2 = 1;
         if (argument.length == 0) {
-            System.out.println("\nВы не ввели аргументы командной строки, перезапустити программу с аргументами!");
+            System.out.println("\nВы не ввели аргументы командной строки, Пожалуйста введите:");
+            Scanner in = new Scanner(System.in);
+            String[] strArray = in.nextLine().split("\\W+");
+            ;
+            for (int i = 0; i < strArray.length; i++) {
+                summa += Integer.parseInt(strArray[i]);
+                summa2 *= Integer.parseInt(strArray[i]);
+            }
         } else {
             for (int i = 0; i < argument.length; i++) {
                 summa += Integer.parseInt(argument[i]);
@@ -102,7 +115,6 @@ public class MenuMainTask {
             System.out.println("Произведение аргументов = " + summa2);
         }
     }
-
     private void task5() {
         Scanner in = new Scanner(System.in);
         String[] monthArr = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь", "Январь"};
@@ -112,10 +124,12 @@ public class MenuMainTask {
             int month = in.nextInt();
             if ((month < 1) || (month > 12)) {
                 System.out.print("\nНекоректный ввод, попробуйте ещё раз!");
+                exit = true;
             } else {
                 System.out.print("\nЭтому числу соответствует месяц: " + monthArr[month - 1]);
+                exit = false;
             }
-            exit = false;
+
         }
     }
 }

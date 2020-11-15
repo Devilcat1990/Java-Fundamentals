@@ -137,29 +137,45 @@ public class OptionalTask1 {
             mediumSize += getSize(values[i]);
         }
         mediumSize = mediumSize / values.length;
-        System.out.println("Средняя длинна всех чисел: "+mediumSize);
-        boolean eq=true;
-        for (int i = 0; i < values.length; i++){
-            if (mediumSize==getSize(values[i])){
-                eq=false;
-            }else{
-                eq=true;
+        System.out.println("Средняя длинна всех чисел: " + mediumSize);
+        boolean eq = true;
+        for (int i = 0; i < values.length; i++) {
+            if (mediumSize == getSize(values[i])) {
+                eq = false;
+            } else {
+                eq = true;
+                i = values.length;
             }
         }
-        if (eq==false) {
+        if (eq == false) {
             System.out.println("Длинна всех чисел ОДИНАКОВА");
             for (int i = 0; i < values.length; i++) {
                 System.out.println("Число: " + values[i] + " Его длинна: " + getSize(values[i]));
             }
-        }else
-            {
-
+        } else {
+            int lowMedium = 0;
+            int bigMedium = 0;
+            for (int i = 0; i < values.length; i++) {
+                if (getSize(values[i]) < mediumSize) {
+                    lowMedium++;
+                }
+                if (getSize(values[i]) > mediumSize) {
+                    bigMedium++;
+                }
+            }
+            if (lowMedium == 0) {
+                System.out.println("Вывод чисел длинна которых меньше средней длинны: Таких нет.");
+            } else {
                 System.out.println("Вывод чисел длинна которых меньше средней длинны:");
                 for (int i = 0; i < values.length; i++) {
                     if (getSize(values[i]) < mediumSize) {
                         System.out.println("Число: " + values[i] + " Его длинна: " + getSize(values[i]));
                     }
                 }
+            }
+            if (bigMedium == 0) {
+                System.out.println("Вывод чисел длинна которых больше средней длинны: Таких нет.");
+            } else {
                 System.out.println("Вывод чисел длинна которых больше средней длинны:");
                 for (int i = 0; i < values.length; i++) {
                     if (getSize(values[i]) > mediumSize) {
@@ -167,6 +183,7 @@ public class OptionalTask1 {
                     }
                 }
             }
+        }
     }
     private void task4(int[] values)
     {
