@@ -41,7 +41,7 @@ public class Hello {
                     OptionalTask1 optTask1 = new OptionalTask1();
                     optTask1.menu(args);
                     break;
-                case 4:
+                case 3:
                     cls();
                     exit = false;
                     break;
